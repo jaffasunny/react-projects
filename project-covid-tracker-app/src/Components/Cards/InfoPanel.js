@@ -14,7 +14,7 @@ const Item = styled(Paper)(({ theme }) => ({
 	marginTop: 50,
 }));
 
-export default function InfoPanel() {
+export default function InfoPanel(props) {
 	return (
 		<Box sx={{ flexGrow: 1 }}>
 			<Grid container spacing={2}>
