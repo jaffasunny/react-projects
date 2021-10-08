@@ -1,11 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
+import { NativeSelect, FormControl } from "@mui/material";
+import { countries } from "../../api";
 
 function CountryPicker() {
-    return (
-        <div>
-            <h1>Country Picker</h1>
-        </div>
-    )
+	const [fetchedCountries, setFetchedCountries] = useState([]);
+	useEffect(() => {
+		const fetchedCountries = async () => {
+			setFetchedCountries(await countries);
+		};
+	}, [setFetchedCountries]);
+	return (
+		<div>
+			<FormControl>
+				<NativeSelect>
+					<option value="global">Global</option>
+				</NativeSelect>
+			</FormControl>
+		</div>
+	);
 }
 
-export default CountryPicker
+export default CountryPicker;
