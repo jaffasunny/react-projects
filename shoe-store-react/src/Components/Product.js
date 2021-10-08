@@ -10,7 +10,7 @@ export default function Product() {
 					const shoe = Shoes[keyName];
 					return (
 						<div key={keyName}>
-							<h2>{shoe.name}</h2>
+							<h3>{shoe.name}</h3>
 							<img src={shoe.img} alt="Shoe Image" />
 						</div>
 					);

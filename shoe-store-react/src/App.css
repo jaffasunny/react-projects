@@ -1,6 +1,15 @@
 .productContainer {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-around;
+	border: 1px solid gainsboro;
+  padding: 1rem;
+}
+
+.productContainer div {
+	box-shadow: 0 0 10px gainsboro;
+  text-align: center;
+  border-radius: 2rem;
 }
 
 .productContainer img {
