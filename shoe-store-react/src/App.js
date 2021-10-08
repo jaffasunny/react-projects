@@ -1,10 +1,12 @@
 import "./App.css";
-import Product from "./Components/Product";
+import RouteConfig from "./Routes";
 
 function App() {
-	return <div className="App">
-    <Product />
-  </div>;
+	return (
+		<div className="App">
+			<RouteConfig />
+		</div>
+	);
 }
 
 export default App;

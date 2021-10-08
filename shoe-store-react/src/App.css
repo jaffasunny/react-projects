@@ -3,15 +3,19 @@
 	flex-wrap: wrap;
 	justify-content: space-around;
 	border: 1px solid gainsboro;
-  padding: 1rem;
+	padding: 1rem;
 }
 
 .productContainer div {
 	box-shadow: 0 0 10px gainsboro;
-  text-align: center;
-  border-radius: 2rem;
+	text-align: center;
+	border-radius: 2rem;
+	margin: 0.7rem;
+	background-color: rgba(139, 196, 191, 0.397);
 }
-
+.productContainer div:hover {
+	background-color: rgba(139, 196, 191, 0.63);
+}
 .productContainer img {
 	height: 30em;
 }
