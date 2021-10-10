@@ -8,6 +8,7 @@ import NotFoundPage from "./components/NotFoundPage";
 import ManageCoursePage from "./components/ManageCoursePage";
 
 function App() {
+	// Always remember add the more specific routes at top of less specific routes
 	return (
 		<div className="container-fluid">
 			<Header />
@@ -15,6 +16,7 @@ function App() {
 				<Route path="/" exact component={HomePage} />
 				<Route path="/courses" component={CoursePage} />
 				<Route path="/course/:slug" component={ManageCoursePage} />
+				<Route path="/course" component={ManageCoursePage} />
 				<Route path="/about" component={AboutPage} />
 				<Redirect from="/about-page" to="/about" />
 				<Route component={NotFoundPage} />
