@@ -1,15 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { getCourses } from "../api/courseApi";
+import courseStore from "../stores/courseStores";
 import CourseLists from "./CourseLists";
+import { loadCourses } from "../actions/courseActions";
 
 function CoursePage() {
-	const [courses, setCourses] = useState([]);
+	const [courses, setCourses] = useState(courseStore.getCourses());
 
 	useEffect(() => {
-		getCourses().then((_courses) => setCourses(_courses));
+		courseStore.addChangeListener(onChange);
+		if (courseStore.getCourses().length === 0) loadCourses();
+		return () => courseStore.removeChangeListener(onChange);
 	}, []);
 
+	function onChange() {
+		setCourses(courseStore.getCourses());
+	}
 	return (
 		<>
 			<h2>Courses</h2>
